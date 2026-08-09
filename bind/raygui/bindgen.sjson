@@ -1,0 +1,33 @@
+// See README.md in root of repository for documentation and more configuration options.
+
+inputs = [
+	"input"
+]
+
+output_folder = "output"
+imports_file = "imports.odin"
+package_name = "raylib"
+
+struct_field_overrides = {
+    "GuiStyleProp.controlId" = "GuiControl"
+}
+
+procedure_type_overrides = {
+    "GuiLoadStyleFromMemory.fileData" = "rawptr"
+    
+    "GuiIconText.iconId" = "GuiIconName"
+    "GuiGetIcons" = "[^]"
+    "GuiLoadIcons" = "[^]"
+    "GuiLoadIconsFromMemory.fileData" = "rawptr"
+    "GuiLoadIconsFromMemory" = "[^]"
+    "GuiDrawIcon.iconId" = "GuiIconName"
+    
+    "GuiListViewEx.text" = "[^]"
+    "GuiTabBarEx.text" = "[^]"
+}
+
+procedures_at_end = false
+
+clang_include_paths = [
+	"/usr/lib/clang/22/include/"
+]
