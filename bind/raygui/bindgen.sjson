@@ -12,6 +12,9 @@ struct_field_overrides = {
 }
 
 procedure_type_overrides = {
+    "GuiSetStyle.control" = "GuiControl"
+    "GuiGetStyle.control" = "GuiControl"
+
     "GuiLoadStyleFromMemory.fileData" = "rawptr"
     
     "GuiIconText.iconId" = "GuiIconName"

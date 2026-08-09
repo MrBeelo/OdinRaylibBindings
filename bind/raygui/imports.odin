@@ -2,7 +2,6 @@ RAYGUI_SHARED :: #config(RAYGUI_SHARED, false)
 RAYGUI_WASM_LIB :: #config(RAYGUI_WASM_LIB, "lib/webassembly/libraygui.web.a")
 
 when ODIN_OS == .Windows {
-	@(extra_linker_flags="/NODEFAULTLIB:" + ("msvcrt" when RAYGUI_SHARED else "libcmt"))
 	foreign import lib {
 		(
 			"lib/win64_msvc16/rayguidll.lib" when RAYGUI_SHARED && ODIN_ARCH == .amd64 else 
