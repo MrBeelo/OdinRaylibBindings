@@ -1,0 +1,3 @@
+Because the provided bindgen executable doesn't search for
+clang correctly on UNIX systems, and uses some builtin types
+instead of c types, compile bindgen with this replacement file :D

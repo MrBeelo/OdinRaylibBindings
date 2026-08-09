@@ -1,4 +1,4 @@
-BINDGEN ?= "./bindgen"
+BINDGEN ?= "./bindgen.bin"
 
 build: raylib rlgl raygui
 	mkdir -p output/rlgl

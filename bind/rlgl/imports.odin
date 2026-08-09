@@ -75,4 +75,4 @@ when !GRAPHICS_API_OPENGL_ES2 {
 	DEFAULT_BATCH_BUFFER_ELEMENTS :: 2048
 }
 
-VertexBufferIndexType :: u16 when GRAPHICS_API_OPENGL_ES2 else u32
+VertexBufferIndexType :: c.ushort when GRAPHICS_API_OPENGL_ES2 else c.uint
