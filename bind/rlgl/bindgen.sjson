@@ -1,11 +1,9 @@
-// See README.md in root of repository for documentation and more configuration options.
-
 inputs = [
-	"input"
+	"../../input/rlgl.h",
 ]
 
-output_folder = "output"
-imports_file = "header.odin"
+output_folder = "out"
+imports_file = "imports.odin"
 package_name = "rlgl"
 
 remove_type_prefix = "rl"

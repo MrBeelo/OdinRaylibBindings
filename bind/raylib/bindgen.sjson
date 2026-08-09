@@ -1,10 +1,9 @@
-// See README.md in root of repository for documentation and more configuration options.
-
 inputs = [
-	"input"
+	"../../input/raylib.h",
+	"../../input/raylib_footer.odin",
 ]
 
-output_folder = "output"
+output_folder = "out"
 imports_file = "imports.odin"
 package_name = "raylib"
 

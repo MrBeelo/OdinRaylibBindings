@@ -1,12 +1,12 @@
 BINDGEN ?= "./bindgen"
 
 build: raylib rlgl raygui
-	mkdir -p out/rlgl
-	cp -a lib/. out/lib/
-	cp -a odin/. out/
-	cp bind/raylib/output/raylib.odin out/raylib.odin
-	cp bind/rlgl/output/rlgl.odin out/rlgl/rlgl.odin
-	cp bind/raygui/output/raygui.odin out/raygui.odin
+	mkdir -p output/rlgl
+	cp -a lib/. output/lib/
+	cp -a odin/. output/
+	cp bind/raylib/out/raylib.odin output/raylib.odin
+	cp bind/rlgl/out/rlgl.odin output/rlgl/rlgl.odin
+	cp bind/raygui/out/raygui.odin output/raygui.odin
 
 raylib:
 	$(BINDGEN) bind/raylib/bindgen.sjson
@@ -16,9 +16,10 @@ rlgl:
 
 raygui:
 	$(BINDGEN) bind/raygui/bindgen.sjson
-	rm bind/raygui/output/raylib.odin
+	rm bind/raygui/out/raylib.odin
 
 clean:
-	rm -rf out
-	rm -rf bind/raylib/output
-	rm -rf bind/rlgl/output
+	rm -rf output
+	rm -rf bind/raylib/out
+	rm -rf bind/rlgl/out
+	rm -rf bind/raygui/out
