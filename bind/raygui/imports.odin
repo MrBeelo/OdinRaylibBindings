@@ -13,10 +13,6 @@ when ODIN_OS == .Windows {
 			"lib/winarm64_msvc16/raygui.lib" when ODIN_ARCH == .arm64 else
 			"system:raygui"
 		),
-		"system:Winmm.lib",
-		"system:Gdi32.lib",
-		"system:User32.lib",
-		"system:Shell32.lib",
 	}
 } else when ODIN_OS == .Linux {
 	// Note(bumbread): I'm not sure why in `linux/` folder there are
@@ -32,16 +28,10 @@ when ODIN_OS == .Windows {
 			"lib/linux_arm64/libraygui.a" when ODIN_ARCH == .arm64 else
 			"system:raygui"
 		),
-		"system:dl",
-		"system:pthread",
-		"system:X11",
 	}
 } else when ODIN_OS == .Darwin {
 	foreign import lib {
 		"lib/macos/libraygui.5.0.0.dylib" when RAYGUI_SHARED else "lib/macos/libraygui.a",
-		"system:Cocoa.framework",
-		"system:OpenGL.framework",
-		"system:IOKit.framework",
 	}
 } else when ODIN_ARCH == .wasm32 || ODIN_ARCH == .wasm64p32 {
 	foreign import lib {
