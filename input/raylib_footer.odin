@@ -7,6 +7,7 @@ import "core:math/bits"
 
 //  Check if a gesture have been detected
 IsGestureDetected :: proc "c" (gesture: Gesture) -> bool {
+	@(default_calling_convention="c")
 	foreign lib {
 		IsGestureDetected :: proc "c" (gesture: Gestures) -> bool ---
 	}
@@ -15,6 +16,7 @@ IsGestureDetected :: proc "c" (gesture: Gesture) -> bool {
 
 // Get latest detected gesture
 GetGestureDetected :: proc "c" () -> Gesture {
+	@(default_calling_convention="c")
 	foreign lib {
 		GetGestureDetected :: proc "c" () -> Gestures ---
 	}
@@ -23,9 +25,9 @@ GetGestureDetected :: proc "c" () -> Gesture {
 }
 
 // Check if one specific window flag is enabled
-IsWindowState :: proc "c" (flag: ConfigFlag) -> bool {
+IsWindowState :: proc(flag: ConfigFlag) -> bool {
 	foreign lib {
-		IsWindowState :: proc "c" (flag: ConfigFlags) -> bool ---
+		IsWindowState :: proc(flag: ConfigFlags) -> bool ---
 	}
 
 	return IsWindowState({flag})

@@ -29,6 +29,11 @@ type_overrides = {
 	"ModelAnimPose" = "[^]Transform"
 }
 
+struct_align = {
+    "VrStereoConfig" = 4
+    "Model" = 4
+}
+
 struct_field_overrides = {
 	"Image.format"      = "PixelFormat"
 	"Texture.format"    = "PixelFormat"
@@ -108,6 +113,7 @@ procedure_type_overrides = {
 
 	"LoadFileData" = "[^]"
 	"UnloadFileData.data" = "[^]"
+	"ExportDataAsCode.data" = "rawptr"
 	"LoadFileText" = "[^]u8"
 	"UnloadFileText.text" = "[^]u8"
 	"SaveFileText.text" = "[^]u8"
@@ -165,6 +171,7 @@ procedure_type_overrides = {
 	"DrawSplineBezierQuadratic.points" = "[^]"
 	"DrawSplineBezierCubic.points" = "[^]"
 
+    "CheckCollisionPointPoly.points" = "[^]"
     "CheckCollisionLines.collisionPoint" = "[^]"
 	
 	"LoadImageRaw.format" = "PixelFormat"
@@ -227,6 +234,7 @@ procedure_type_overrides = {
 	"TextCopy.dst" = "[^]u8"
 	"TextJoin.textList" = "[^]"
 	"TextSplit" = "[^]"
+	"TextSplit.delimiter" = "u8"
 	"TextAppend.text" = "[^]u8"
 	"GetTextBetween" = "[^]u8"
 	"TextReplace" = "[^]u8"
