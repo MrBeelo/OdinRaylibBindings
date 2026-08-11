@@ -1,0 +1,14 @@
+inputs = [
+	"../../input/raylib.h",
+	"../../input/rcamera.h",
+]
+
+output_folder = "out"
+imports_file = "imports.odin"
+package_name = "raylib"
+
+procedures_at_end = false
+
+clang_include_paths = [
+	"/usr/lib/clang/22/include/"
+]

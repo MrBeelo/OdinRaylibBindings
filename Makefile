@@ -1,6 +1,7 @@
 BINDGEN ?= "./bindgen.bin"
 
-build: raylib rlgl raygui
+build: raylib rlgl raygui rcamera
+	# Make necessary folders
 	mkdir -p output/rlgl
 
 	# Copy libraries and handmade odin code to output folder
@@ -12,6 +13,7 @@ build: raylib rlgl raygui
 	cp bind/raylib/out/raylib.odin output/raylib.odin
 	cp bind/rlgl/out/rlgl.odin output/rlgl/rlgl.odin
 	cp bind/raygui/out/raygui.odin output/raygui.odin
+	cp bind/rcamera/out/rcamera.odin output/rcamera.odin
 
 	# Remove mingw binaries as they are not used
 	rm -rf output/lib/win32_mingw-w64
@@ -27,8 +29,13 @@ raygui:
 	$(BINDGEN) bind/raygui/bindgen.sjson
 	rm bind/raygui/out/raylib.odin
 
+rcamera:
+	$(BINDGEN) bind/rcamera/bindgen.sjson
+	rm bind/rcamera/out/raylib.odin
+
 clean:
 	rm -rf output
 	rm -rf bind/raylib/out
 	rm -rf bind/rlgl/out
 	rm -rf bind/raygui/out
+	rm -rf bind/rcamera/out
