@@ -25,9 +25,10 @@ GetGestureDetected :: proc "c" () -> Gesture {
 }
 
 // Check if one specific window flag is enabled
-IsWindowState :: proc(flag: ConfigFlag) -> bool {
+IsWindowState :: proc "c" (flag: ConfigFlag) -> bool {
+	@(default_calling_convention="c")
 	foreign lib {
-		IsWindowState :: proc(flag: ConfigFlags) -> bool ---
+		IsWindowState :: proc "c" (flag: ConfigFlags) -> bool ---
 	}
 
 	return IsWindowState({flag})
