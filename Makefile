@@ -4,10 +4,10 @@ build: raylib rlgl raygui rcamera
 	# Make necessary folders
 	mkdir -p output/rlgl
 
-	# Copy libraries and handmade odin code to output folder
+	# Copy libraries and includes code to output folder
 	cp -a lib/raylib/. output/lib/
 	cp -a lib/raygui/. output/lib/
-	cp -a odin/. output/
+	cp -a incl/. output/
 
 	# Copy generated bindings to output folder
 	cp bind/raylib/out/raylib.odin output/raylib.odin
